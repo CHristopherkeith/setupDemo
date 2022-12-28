@@ -1,5 +1,8 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import HomeView1 from '1030SetupNpmlink/src/views/HomeView.vue'
+import HomeView2 from '../../node_modules/1030SetupNpmlink/src/views/HomeView.vue'
+import HelloWorld from '@/components/HelloWorld.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
