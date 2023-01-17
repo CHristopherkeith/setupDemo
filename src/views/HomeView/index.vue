@@ -10,9 +10,10 @@ import HomeView from "subprojectVue/src/views/SubProjectHomeView.vue";
 import DynamicComp from "@/views/DynamicComp/DynamicComp.vue";
 
 // import HomeView from "subProjectTs/src/views/SubProjectTsHomeView.vue";
-const path: Ref<string> = ref("");
+const path: Ref<string> = ref("views/SubProjectTsHomeView");
 function onClick() {
   // path.value = "views/SubProjectTsHomeView";
-  path.value = localStorage.getItem("dynamicCompPath") || "";
+  // console.log(localStorage.getItem("dynamicCompPath"), '[localStorage.getItem("dynamicCompPath")]')
+  path.value = localStorage.getItem("dynamicCompPath") || "views/SubProjectTsHomeView";
 }
 </script>
