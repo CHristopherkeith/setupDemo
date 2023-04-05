@@ -44,5 +44,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
   由于`ES6`+`webpack`的静态编译特性，`import(path)`的`path`不能完全为动态，需要指定特定的部分模块路径信息，需要解决，在主项目指定的**特定的部分模块路径信息**如何动态与业务项目关联
 
 - 考虑上一个问题，其根本原因在于`import()`只支持编译时静态编译，是否可以考虑动态编译？[实际上动态编译可能只是一个技术思考，是否真有其必要性？]
+  0. `import(f())`[ruanyifeng]
   1. `require()`方法能否支持编译时动态编译？
   2. 运行时编译？（例如编译`vue`组件字符串）
