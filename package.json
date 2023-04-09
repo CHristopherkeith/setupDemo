@@ -1,10 +1,11 @@
 {
-  "name": "setup-demo-test",
+  "name": "setupDemo",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-ci": "vue-cli-service build --mode production_ci",
     "s": "http-server ./dist"
   },
   "dependencies": {
