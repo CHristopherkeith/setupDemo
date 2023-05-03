@@ -47,3 +47,13 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
   0. `import(f())`[ruanyifeng]
   1. `require()`方法能否支持编译时动态编译？
   2. 运行时编译？（例如编译`vue`组件字符串）
+
+### docker
+Docker Desktop requires a newer WSL kernel version.
+Update the WSL kernel by running "wsl --update" or follow instructions at https://docs.microsoft.com/windows/wsl/wsl2-kernel.
+
+- 构建镜像
+docker build -t setup-demo .
+
+- 创建容器
+docker run -d -p 80:80 --name docker-demo setup-demo 
