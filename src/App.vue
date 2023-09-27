@@ -5,6 +5,23 @@
   </nav>
   <router-view/>
 </template>
+<script setup lang="ts">
+import { onBeforeMount, onMounted } from 'vue';
+
+onMounted(()=>{
+  console.log('[onMounted from App.vue]')
+})
+
+onBeforeMount(async ()=>{
+  console.log('[onBeforeMount from App.vue]')
+  await new Promise(resolve=>{
+    setTimeout(() => {
+      resolve(true);
+    }, 0);
+  })
+  console.log('[onBeforeMount from App.vue end]')
+})
+</script>
 
 <style lang="scss">
 #app {

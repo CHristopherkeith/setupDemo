@@ -10,6 +10,18 @@
 <script lang="ts" setup>
 import { Ref, ref } from "vue";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+// 测试执行时机
+import foo from "./testData";
+import { onMounted, onBeforeMount } from 'vue';
+
+onMounted(()=>{
+  console.log('[onMounted from HomeView.vue]')
+})
+
+onBeforeMount(()=>{
+  console.log('[onBeforeMount from HomeView.vue]')
+})
+console.log(foo, '[foo from HomeView.vue]')
 
 let value: Ref<string> = ref("");
 

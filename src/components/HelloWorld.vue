@@ -32,15 +32,31 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script lang="ts" setup>
+import { defineComponent, onMounted, toRefs, onBeforeMount } from 'vue';
 
-export default defineComponent({
-  name: 'HelloWorld',
-  props: {
-    msg: String,
-  },
-});
+const props = defineProps({
+  msg: String
+})
+
+onMounted(()=>{
+  console.log('[onMounted from HelloWorld.vue]')
+})
+
+onBeforeMount(()=>{
+  console.log('[onBeforeMount from HelloWorld.vue]')
+})
+
+// const {msg} = toRefs(props)
+
+// onMounted
+
+// export default defineComponent({
+//   name: 'HelloWorld',
+//   props: {
+//     msg: String,
+//   },
+// });
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

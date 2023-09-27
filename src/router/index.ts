@@ -20,4 +20,13 @@ const router = createRouter({
   routes,
 });
 
+router.beforeEach(async (to, from) => {
+  // console.log(to, from);
+  // await new Promise((resolve, reject) => {
+  //   setTimeout(() => {
+  //     resolve(true);
+  //   }, 1000);
+  // })
+})
+
 export default router;
