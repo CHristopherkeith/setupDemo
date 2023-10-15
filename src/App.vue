@@ -1,35 +1,43 @@
 <template>
-  <nav>
+  <!-- <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-  </nav>
+  </nav> -->
   <router-view/>
 </template>
 <script setup lang="ts">
 import { onBeforeMount, onMounted } from 'vue';
 
-onMounted(()=>{
-  console.log('[onMounted from App.vue]')
-})
+// onMounted(()=>{
+//   console.log('[onMounted from App.vue]')
+// })
 
-onBeforeMount(async ()=>{
-  console.log('[onBeforeMount from App.vue]')
-  await new Promise(resolve=>{
-    setTimeout(() => {
-      resolve(true);
-    }, 0);
-  })
-  console.log('[onBeforeMount from App.vue end]')
-})
+// onBeforeMount(async ()=>{
+//   console.log('[onBeforeMount from App.vue]')
+//   await new Promise(resolve=>{
+//     setTimeout(() => {
+//       resolve(true);
+//     }, 0);
+//   })
+//   console.log('[onBeforeMount from App.vue end]')
+// })
 </script>
 
 <style lang="scss">
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: 100%;
+  width: 100%;
 }
 
 nav {

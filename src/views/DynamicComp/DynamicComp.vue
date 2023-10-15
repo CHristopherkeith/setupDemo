@@ -31,18 +31,18 @@ onMounted(async (): Promise<void> => {
     // const dyComp = await import(
     //   /* webpackChunkName: "SubProjectTsHomeView" */ path.value
     // );
-    console.log(path.value, "[path.value]");
+    // console.log(path.value, "[path.value]");
     const dyComp = defineAsyncComponent(
       () =>
         import(
           /* webpackChunkName: "SubProjectTsComp" */ `subProjectTs/src/${path.value}.vue`
         )
     );
-    console.log(dyComp, "[dyComp]");
+    // console.log(dyComp, "[dyComp]");
     comp.value = markRaw(dyComp);
   } catch (error) {
-    console.log(error, "[error]");
-    console.log("[动态组件路径错误]");
+    // console.log(error, "[error]");
+    // console.log("[动态组件路径错误]");
   }
 });
 </script>

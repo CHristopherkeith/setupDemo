@@ -39,13 +39,13 @@ const props = defineProps({
   msg: String
 })
 
-onMounted(()=>{
-  console.log('[onMounted from HelloWorld.vue]')
-})
+// onMounted(()=>{
+//   console.log('[onMounted from HelloWorld.vue]')
+// })
 
-onBeforeMount(()=>{
-  console.log('[onBeforeMount from HelloWorld.vue]')
-})
+// onBeforeMount(()=>{
+//   console.log('[onBeforeMount from HelloWorld.vue]')
+// })
 
 // const {msg} = toRefs(props)
 

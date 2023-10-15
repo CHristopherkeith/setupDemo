@@ -14,14 +14,14 @@ import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 import foo from "./testData";
 import { onMounted, onBeforeMount } from 'vue';
 
-onMounted(()=>{
-  console.log('[onMounted from HomeView.vue]')
-})
+// onMounted(()=>{
+//   console.log('[onMounted from HomeView.vue]')
+// })
 
-onBeforeMount(()=>{
-  console.log('[onBeforeMount from HomeView.vue]')
-})
-console.log(foo, '[foo from HomeView.vue]')
+// onBeforeMount(()=>{
+//   console.log('[onBeforeMount from HomeView.vue]')
+// })
+// console.log(foo, '[foo from HomeView.vue]')
 
 let value: Ref<string> = ref("");
 

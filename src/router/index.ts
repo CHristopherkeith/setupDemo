@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView/index.vue";
+import FlowEditor from "@/views/FlowEditor/FlowEditor.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -12,6 +13,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "about",
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+  },
+  {
+    path: "/editor",
+    name: "editor",
+    component: FlowEditor,
   },
 ];
 
@@ -27,6 +33,6 @@ router.beforeEach(async (to, from) => {
   //     resolve(true);
   //   }, 1000);
   // })
-})
+});
 
 export default router;

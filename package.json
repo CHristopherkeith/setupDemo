@@ -9,13 +9,23 @@
     "s": "http-server ./dist"
   },
   "dependencies": {
+    "@antv/x6": "^2.15.2",
+    "@antv/x6-plugin-clipboard": "^2.1.6",
+    "@antv/x6-plugin-history": "^2.2.4",
+    "@antv/x6-plugin-keyboard": "^2.2.1",
+    "@antv/x6-plugin-selection": "^2.2.1",
+    "@antv/x6-plugin-snapline": "^2.1.7",
+    "@antv/x6-plugin-stencil": "^2.1.4",
+    "@antv/x6-plugin-transform": "^2.1.8",
     "core-js": "^3.8.3",
+    "insert-css": "^2.0.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@types/insert-css": "^2.0.1",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-typescript": "~5.0.0",

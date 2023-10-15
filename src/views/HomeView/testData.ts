@@ -1,2 +1,2 @@
-console.log('[testData from testData.ts]')
+// console.log('[testData from testData.ts]')
 export default {}
