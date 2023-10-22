@@ -77,7 +77,7 @@ onMounted(() => {
       },
     },
   });
-  // #endregion
+  // #end region
 
   // #region 使用插件
   graph
@@ -97,7 +97,7 @@ onMounted(() => {
     .use(new Keyboard())
     .use(new Clipboard())
     .use(new History());
-  // #endregion
+  // #end region
 
   // #region 初始化 stencil
   const stencil = new Stencil({
@@ -127,7 +127,7 @@ onMounted(() => {
     },
   });
   document.getElementById("stencil")!.appendChild(stencil.container);
-  // #endregion
+  // #end region
 
   // #region 快捷键与事件
   graph.bindKey(["meta+c", "ctrl+c"], () => {
@@ -152,6 +152,7 @@ onMounted(() => {
     }
     return false;
   });
+  // #end region
 
   // undo redo
   graph.bindKey(["meta+z", "ctrl+z"], () => {
@@ -197,7 +198,7 @@ onMounted(() => {
     }
   });
 
-  // 控制连接桩显示/隐藏
+  // #region 控制连接桩显示/隐藏
   const showPorts = (ports: NodeListOf<SVGElement>, show: boolean) => {
     for (let i = 0, len = ports.length; i < len; i += 1) {
       ports[i].style.visibility = show ? "visible" : "hidden";
@@ -217,7 +218,7 @@ onMounted(() => {
     ) as NodeListOf<SVGElement>;
     showPorts(ports, false);
   });
-  // #endregion
+  // #end region
 
   // #region 初始化图形
   const ports = {
@@ -511,7 +512,7 @@ onMounted(() => {
     })
   );
   stencil.load(imageNodes, "group2");
-  // #endregion
+  // #end region
 
   function preWork() {
     // 这里协助演示的代码，在实际项目中根据实际情况进行调整

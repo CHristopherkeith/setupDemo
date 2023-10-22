@@ -57,3 +57,10 @@ docker build -t setup-demo .
 
 - 创建容器
 docker run -d -p 80:80 --name docker-demo setup-demo 
+
+
+### websocket注意点
+- 接收&发送消息格式
+- 多个事件处理
+- 错误处理
+- 心跳机制
