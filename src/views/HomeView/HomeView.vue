@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <button @click="onClick">click</button>
-    <input v-model="value" />
+    <!-- <button @click="onClick">click</button>
+    <input v-model="value" /> -->
     <img alt="Vue logo" src="@/assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
   </div>

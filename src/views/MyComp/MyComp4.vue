@@ -1,0 +1,48 @@
+<template>
+  <div>
+    <span>MyComp4</span>
+    <!-- <el-button type="primary">MyComp4</el-button> -->
+    <!-- <el-icon>
+      <Delete />
+    </el-icon> -->
+    <!-- <MyComp6/>
+    <MyComp7/> -->
+    <!-- <component :is="comps['MyComp6']"></component>
+    <component :is="comps['MyComp7']"></component> -->
+    <!-- <el-table :data="tableData" style="width: 100%">
+      <el-table-column prop="date" label="Date" width="180" />
+      <el-table-column prop="name" label="Name" width="180" />
+      <el-table-column prop="address" label="Address" />
+    </el-table> -->
+  </div>
+</template>
+<script lang="ts" setup>
+// import MyComp6 from './MyComp6.vue';
+// import MyComp7 from './MyComp7.vue';
+// import { comps } from "@/views/MyComp/useComp";
+// import {Delete} from "@element-plus/icons-vue"
+// const {Search} = require("@element-plus/icons-vue")
+// console.log(comps);
+const tableData = [
+  {
+    date: "2016-05-03",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
+  },
+  {
+    date: "2016-05-02",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
+  },
+  {
+    date: "2016-05-04",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
+  },
+  {
+    date: "2016-05-01",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
+  },
+];
+</script>

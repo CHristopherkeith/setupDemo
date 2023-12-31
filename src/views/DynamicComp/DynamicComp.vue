@@ -9,6 +9,7 @@ import {
   ref,
   defineAsyncComponent,
   nextTick,
+  watch,
 } from "vue";
 // import HomeView from "subProjectTs/src/views/SubProjectTsHomeView.vue";
 
@@ -24,9 +25,7 @@ const { path } = toRefs(props);
 
 const comp = ref();
 
-// comp.value = markRaw(HomeView);
-
-onMounted(async (): Promise<void> => {
+watch(path, () => {
   try {
     // const dyComp = await import(
     //   /* webpackChunkName: "SubProjectTsHomeView" */ path.value
@@ -34,16 +33,44 @@ onMounted(async (): Promise<void> => {
     // console.log(path.value, "[path.value]");
     const dyComp = defineAsyncComponent(
       () =>
+        // import(
+        //   /* webpackChunkName: "SubProjectTsComp" */ `subProjectTs/src/${path.value}.vue`
+        // )
         import(
-          /* webpackChunkName: "SubProjectTsComp" */ `subProjectTs/src/${path.value}.vue`
+          /* webpackChunkName: "[request]" */
+          `@/views/MyComp/${path.value}.vue`
         )
     );
     // console.log(dyComp, "[dyComp]");
     comp.value = markRaw(dyComp);
   } catch (error) {
-    // console.log(error, "[error]");
+    console.log(error, "[this is error]");
     // console.log("[动态组件路径错误]");
   }
+}, {immediate:true});
+
+onMounted(async (): Promise<void> => {
+  // try {
+  //   // const dyComp = await import(
+  //   //   /* webpackChunkName: "SubProjectTsHomeView" */ path.value
+  //   // );
+  //   // console.log(path.value, "[path.value]");
+  //   const dyComp = defineAsyncComponent(
+  //     () =>
+  //       // import(
+  //       //   /* webpackChunkName: "SubProjectTsComp" */ `subProjectTs/src/${path.value}.vue`
+  //       // )
+  //       import(
+  //         /* webpackChunkName: "[bar]" */
+  //         `@/views/MyComp/${path.value}.vue`
+  //       )
+  //   );
+  //   // console.log(dyComp, "[dyComp]");
+  //   comp.value = markRaw(dyComp);
+  // } catch (error) {
+  //   // console.log(error, "[error]");
+  //   // console.log("[动态组件路径错误]");
+  // }
 });
 </script>
 <style></style>

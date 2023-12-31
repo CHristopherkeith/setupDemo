@@ -1,12 +1,25 @@
 <template>
-  <!-- <nav>
+  <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav> -->
-  <router-view/>
+    <!-- <router-link to="/about">About</router-link> |
+    <router-link to="/editor">Editor</router-link> -->
+    <router-link to="/c1">c1</router-link> |
+    <router-link to="/c2">c2</router-link>
+  </nav>
+  <router-view />
 </template>
 <script setup lang="ts">
-import { onBeforeMount, onMounted } from 'vue';
+import { onBeforeMount, onMounted } from "vue";
+import { useRoute, useRouter } from "vue-router";
+// import { comps } from "@/views/MyComp/useComp";
+import {ElMessageBox} from "element-plus"
+import {Delete} from "@element-plus/icons-vue"
+
+console.log(ElMessageBox,'===============', Delete)
+
+console.log(useRoute, useRouter)
+
+
 
 // onMounted(()=>{
 //   console.log('[onMounted from App.vue]')
@@ -24,7 +37,8 @@ import { onBeforeMount, onMounted } from 'vue';
 </script>
 
 <style lang="scss">
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   padding: 0;
