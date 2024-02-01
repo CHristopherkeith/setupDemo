@@ -23,6 +23,7 @@
     "element-plus": "^2.3.2",
     "insert-css": "^2.0.0",
     "lodash": "^4.17.21",
+    "three": "^0.161.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@types/insert-css": "^2.0.1",
+    "@types/three": "^0.161.1",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-typescript": "~5.0.0",

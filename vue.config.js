@@ -38,7 +38,7 @@ module.exports = {
       Components.default({
         resolvers: [ElementPlusResolver()],
       }),
-      new BundleAnalyzerPlugin({ analyzerPort: isProduction ? 8891 : 8890 }),
+      // new BundleAnalyzerPlugin({ analyzerPort: isProduction ? 8891 : 8890 }),
     ],
   },
 };

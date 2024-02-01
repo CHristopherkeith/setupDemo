@@ -1,11 +1,11 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
+  <!-- <nav> -->
+    <!-- <router-link to="/">Home</router-link> | -->
     <!-- <router-link to="/about">About</router-link> |
     <router-link to="/editor">Editor</router-link> -->
-    <router-link to="/c1">c1</router-link> |
-    <router-link to="/c2">c2</router-link>
-  </nav>
+    <!-- <router-link to="/c1">c1</router-link> |
+    <router-link to="/c2">c2</router-link> -->
+  <!-- </nav> -->
   <router-view />
 </template>
 <script setup lang="ts">
@@ -14,10 +14,6 @@ import { useRoute, useRouter } from "vue-router";
 // import { comps } from "@/views/MyComp/useComp";
 import {ElMessageBox} from "element-plus"
 import {Delete} from "@element-plus/icons-vue"
-
-console.log(ElMessageBox,'===============', Delete)
-
-console.log(useRoute, useRouter)
 
 
 
