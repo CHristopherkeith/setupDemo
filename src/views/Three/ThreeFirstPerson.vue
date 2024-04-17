@@ -17,9 +17,15 @@ import { ElMessage, ElLoading } from "element-plus";
 
 const containerRef = ref<HTMLDivElement>();
 
-onMounted(init);
+onMounted(async ()=>{
+  await init();
+  animate();
+});
+
+const clock = new THREE.Clock();
 
 let camera: THREE.PerspectiveCamera,
+  controls: FirstPersonControls,
   scene: THREE.Scene,
   renderer: THREE.WebGLRenderer;
 
@@ -34,14 +40,19 @@ async function init() {
 
   //Camera
   camera = new THREE.PerspectiveCamera(
-    45,
+    40,
     containerWidth / containerHeight,
     1,
     1000
   );
-  camera.position.z = -70;
-  camera.position.y = 25;
-  camera.position.x = 90;
+  // camera.position.x = 90;
+  // camera.position.y = 25;
+  // camera.position.z = -70;
+  
+  
+  camera.position.z = -40;
+  camera.position.y = 2;
+  camera.position.x = 19;
 
   //Lights
   const directionalLight1 = new THREE.DirectionalLight(0xffeeff, 2.5);
@@ -87,8 +98,17 @@ async function init() {
   containerRef.value!.appendChild(renderer.domElement);
 
   //Controls
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.addEventListener("change", render);
+  // const controls = new OrbitControls(camera, renderer.domElement);
+  // controls.addEventListener("change", render);
+
+  /* const  */ controls = new FirstPersonControls(camera, renderer.domElement);
+
+  controls.movementSpeed = 5;
+  controls.lookSpeed = 0.05;
+  // controls.lookVertical = true;
+  // controls.activeLook = false;
+
+  controls.lookAt(19,2,25);
 
   window.addEventListener("resize", onWindowResize);
 
@@ -123,7 +143,7 @@ const curve = new THREE.CatmullRomCurve3(
   vectors.map((item) => new THREE.Vector3(...item)),
   false,
   "centripetal",
-  100,
+  100
 );
 
 const curvePoints = curve.getPoints(100);
@@ -264,17 +284,28 @@ function addTrack_normal_line(): void {
   scene.add(line);
 }
 
-function onWindowResize() {
+function onWindowResize(controls: any) {
   const containerWidth = containerRef.value!.offsetWidth;
   const containerHeight = containerRef.value!.offsetHeight;
   camera.aspect = containerWidth / containerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 
-  render();
+  controls.handleResize();
+
+  // render();
+}
+
+function animate() {
+
+requestAnimationFrame( animate );
+
+render();
+
 }
 
 function render() {
+  controls.update(clock.getDelta());
   renderer.render(scene, camera);
 }
 </script>

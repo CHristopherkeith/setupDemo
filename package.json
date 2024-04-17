@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build-ci": "vue-cli-service build --mode production_ci",
-    "s": "http-server ./build/dist"
+    "s": "http-server ./build/JNPFForm"
   },
   "dependencies": {
     "@antv/x6": "^2.15.2",
