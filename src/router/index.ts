@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView/index.vue";
 import Three from "@/views/Three/Three.vue";
+import JumpMp from "@/views/JumpMp/JumpMp.vue";
 // import FlowEditor from "@/views/FlowEditor/FlowEditor.vue";
 // import FlowEditor from "@/views/FlowEditor/FlowEditor.vue";
 // import MyComp1 from "@/views/MyComp/MyComp1.vue"
@@ -16,6 +17,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/three",
     name: "three",
     component: Three,
+  },
+  {
+    path: "/pages-h5/test/index",
+    name: "jumpMp",
+    component: JumpMp,
   },
   // {
   //   path: "/about",
